@@ -1,0 +1,66 @@
+# Default configuration for Few-Shot Learning with Feature Selection
+
+# Dataset settings
+data:
+  name: 'MSTAR_10_Classes'  # Options: 'MSTAR_10_Classes', 'UCMerced_LandUse', 'nwpu_resisc45'
+  train_dir: null  # Will use default paths if null
+  eval_dir: null   # Will use default paths if null
+
+# Model architecture
+model:
+  backbone: 'resnet50'  # Options: 'resnet18', 'resnet50', 'efficient_net'
+  feature_selector: 'rl'  # Options: 'rl', 'mlp'
+  
+# Feature selector settings
+feature_selector:
+  eval_mode: 'threshold'  # Options: 'threshold', 'threshold_calibrated', 'top_p', 'topk'
+  threshold: 0.7
+  top_p: 0.9
+  hidden_size: 256
+
+# Training settings
+training:
+  n_way: 5
+  n_shot: 5
+  n_query: 10
+  n_episodes: 6000
+  learning_rate: 0.0001
+  backbone_lr_scale: 0.2
+  finetune_backbone: true
+  
+# Feature normalization
+normalization:
+  feature_norm: 'none'  # Options: 'none', 'l2'
+  post_selection_norm: 'l2'  # Options: 'none', 'l2'
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+
+# Prototypical network settings
+prototypical:
+  metric: 'cosine'  # Options: 'euclidean', 'cosine'
+  temperature: 0.7
+
+# Evaluation settings
+evaluation:
+  n_way: 3
+  n_shot: 1
+  n_query: 10
+  n_tasks: 100
+  
+# Image settings
+image:
+  size: 224
+
+# Novel class split (for MSTAR)
+novel_split:
+  enabled: true
+  base_class_count: 7
+  manual_base_classes: []  # Override automatic split if provided
+  manual_novel_classes: []  # Override automatic split if provided
+
+# Output settings
+output:
+  save_dir: './results'
+  save_models: true
+  model_name: 'proto_network'
+  selector_name: 'feature_selector'
