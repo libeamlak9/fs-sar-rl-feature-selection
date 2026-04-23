@@ -1,5 +1,6 @@
 # Few-Shot Learning with RL-Based Feature Selection
 
+[![DOI](https://zenodo.org/badge/1219248716.svg)](https://doi.org/10.5281/zenodo.19712420)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/pytorch-2.0+-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
