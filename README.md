@@ -207,7 +207,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- MSTAR dataset provided by [source]
+- MSTAR dataset provided by https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
 - Built with PyTorch and EasyFSL
 
 ## Contact
